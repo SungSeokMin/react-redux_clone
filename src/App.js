@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import Subscribers from './components/Subscribers';
-import { Provider } from 'react-redux';
+import Display from './components/Display';
+import Views from './components/Views';
 import store from './redux/store';
+import Comments from './components/Comments';
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div className="App">
-          <Subscribers />
-        </div>
-      </Provider>
-    );
-  }
+function App() {
+  return (
+    <Provider store={store}>
+      <div className="App">
+        <Comments />
+        <Subscribers />
+        <Views />
+        <Display />
+      </div>
+    </Provider>
+  );
 }
 
 export default App;
